@@ -1,28 +1,25 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html  ng-app="LunchCheck">
   <head>
-    <script type="text/javascript" src="angular.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-    <link rel="stylesheet" href="bootstrap.min.css">
     <title>MyApp</title>
+<script src="angular.min.js"></script>
+<script type="text/javascript" src="app.js"> </script>
+<link rel="stylesheet" href="bootstrap.min.css">
   </head>
-  <body>
+<body>
+   <div class="container" ng-controller="LunchCheckController">
+     <h1>Welcome to ResturantApp</h1>
 
-    <div ng-controller="lunchCheckerController">
-    <h1> Welcome to Resturant app</h1>
-
-  <div>
-    Enter Your Choice here :
-    <input type="text" ng-model="items">
-  </div>
-
-  <div>
-    <br>
-    <input type="button" value="Check if Too Much" ng-click="check();" ng-module="message">
-    {{message}}
-  </div>
-
-  </div>
-
-  </body>
+         <div class="form-group">
+           Enter your Input here :
+             <input id="lunch-menu" type="text" class="form-control" ng-model="item" ng-style="box" width="100px">
+         </div>
+         <div ng-style ="font">
+           {{msg}}
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default" ng-click="checkItems()">Check If Too Much</button>
+         </div>
+   </div>
+</body>
 </html>
